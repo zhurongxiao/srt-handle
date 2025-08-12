@@ -1,0 +1,3 @@
+SKIP: "applause", "music", "laughter"
+COMBINE: "thank you", "entire life", "drop out"
+END: "I", "my", "she", "he", "as", "it was", "I could", "in", "in the", "on", "on the", "to", "be", "to be", "about", "what", "from", "I've", "it no","that's", "his", "and", "they", "by","I really","I was"

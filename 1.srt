@@ -1,0 +1,1363 @@
+1
+00:00:01,570 --> 00:00:08,960
+[Music]
+
+2
+00:00:08,960 --> 00:00:11,880
+this program is brought to you by
+
+3
+00:00:11,880 --> 00:00:14,880
+Stanford University please visit us at
+
+4
+00:00:14,880 --> 00:00:14,880
+stanford.edu
+
+5
+00:00:20,519 --> 00:00:23,519
+thank
+
+6
+00:00:26,080 --> 00:00:30,400
+you I'm uh honored to be with you today
+
+7
+00:00:30,400 --> 00:00:33,400
+for your commencement from one of the
+
+8
+00:00:33,400 --> 00:00:34,800
+finest universities in the
+
+9
+00:00:34,800 --> 00:00:37,399
+[Applause]
+
+10
+00:00:37,399 --> 00:00:40,239
+world truth be
+
+11
+00:00:40,239 --> 00:00:43,520
+told uh I never graduated from
+
+12
+00:00:43,520 --> 00:00:46,640
+college and uh this is the closest I've
+
+13
+00:00:46,640 --> 00:00:46,640
+ever gotten to a college
+
+14
+00:00:46,920 --> 00:00:52,079
+graduation today I want to tell you
+
+15
+00:00:52,079 --> 00:00:54,760
+three stories from my life that's it no
+
+16
+00:00:54,760 --> 00:00:57,760
+big deal just three
+
+17
+00:00:57,760 --> 00:01:00,760
+stories the first story is about
+
+18
+00:01:00,760 --> 00:01:02,800
+connecting the dots
+
+19
+00:01:02,800 --> 00:01:04,799
+I dropped out of Reed College after the
+
+20
+00:01:04,799 --> 00:01:06,920
+first 6 months but then stayed around as
+
+21
+00:01:06,920 --> 00:01:08,200
+a drop in for another 18 months or so
+
+22
+00:01:08,200 --> 00:01:11,159
+before I really
+
+23
+00:01:11,159 --> 00:01:14,119
+quit so why' I drop
+
+24
+00:01:14,119 --> 00:01:17,400
+out it started before I was
+
+25
+00:01:17,400 --> 00:01:19,759
+born my biological mother was a young
+
+26
+00:01:19,759 --> 00:01:21,159
+unwed graduate student and she decided
+
+27
+00:01:21,159 --> 00:01:23,720
+to put me up for
+
+28
+00:01:23,720 --> 00:01:26,000
+adoption she felt very strongly that I
+
+29
+00:01:26,000 --> 00:01:28,159
+should be adopted by college graduates
+
+30
+00:01:28,159 --> 00:01:30,720
+so everything was all set for me to be
+
+31
+00:01:30,720 --> 00:01:33,640
+adopted at Birth by a lawyer and a his
+
+32
+00:01:33,640 --> 00:01:35,320
+wife except that when I popped out they
+
+33
+00:01:35,320 --> 00:01:36,640
+decided at the last minute that they
+
+34
+00:01:36,640 --> 00:01:39,439
+really wanted a
+
+35
+00:01:39,439 --> 00:01:41,240
+girl so my parents who were on a waiting
+
+36
+00:01:41,240 --> 00:01:44,360
+list got a call in the middle of the
+
+37
+00:01:44,360 --> 00:01:49,759
+night asking we've got an unexpected
+
+38
+00:01:49,759 --> 00:01:52,360
+baby boy do you want him they said of
+
+39
+00:01:52,360 --> 00:01:54,560
+course my biological mother found out
+
+40
+00:01:54,560 --> 00:01:56,600
+later that my mother had never graduated
+
+41
+00:01:56,600 --> 00:01:59,159
+from college and that my father had
+
+42
+00:01:59,159 --> 00:02:02,200
+never graduated from high school she
+
+43
+00:02:02,200 --> 00:02:04,680
+refused to signed the final adoption
+
+44
+00:02:04,680 --> 00:02:07,200
+papers she only relented a few months
+
+45
+00:02:07,200 --> 00:02:10,679
+later when my parents promised that I
+
+46
+00:02:10,679 --> 00:02:12,720
+would go to college this was the start
+
+47
+00:02:12,720 --> 00:02:16,360
+in my
+
+48
+00:02:16,360 --> 00:02:19,160
+life and 17 years later I did go to
+
+49
+00:02:19,160 --> 00:02:21,319
+college but I naively chose a college
+
+50
+00:02:21,319 --> 00:02:23,720
+that was almost as expensive as
+
+51
+00:02:23,720 --> 00:02:25,560
+Stanford and all of my workingclass
+
+52
+00:02:25,560 --> 00:02:28,800
+parents savings were being spent on my
+
+53
+00:02:28,800 --> 00:02:30,599
+college tuition after 6 months I
+
+54
+00:02:30,599 --> 00:02:32,319
+couldn't see the value in it
+
+55
+00:02:32,319 --> 00:02:34,760
+I had no idea what I wanted to do with
+
+56
+00:02:34,760 --> 00:02:37,080
+my life and no idea how College was
+
+57
+00:02:37,080 --> 00:02:39,120
+going to help me figure it out and here
+
+58
+00:02:39,120 --> 00:02:41,400
+I was spending all the money my parents
+
+59
+00:02:41,400 --> 00:02:44,760
+had saved their entire
+
+60
+00:02:44,760 --> 00:02:47,680
+life so I decided to drop out and trust
+
+61
+00:02:47,680 --> 00:02:49,519
+that it would all work out okay it was
+
+62
+00:02:49,519 --> 00:02:51,480
+pretty scary at the time but looking
+
+63
+00:02:51,480 --> 00:02:52,920
+back it was one of the best decisions I
+
+64
+00:02:52,920 --> 00:02:56,120
+ever
+
+65
+00:02:56,120 --> 00:02:58,080
+made the minute I dropped out I could
+
+66
+00:02:58,080 --> 00:03:00,840
+stop taking the required classes that
+
+67
+00:03:00,840 --> 00:03:03,599
+didn't interest me and begin dropping in
+
+68
+00:03:03,599 --> 00:03:06,480
+on the ones that looked far more
+
+69
+00:03:06,480 --> 00:03:08,239
+interesting it wasn't all romantic I
+
+70
+00:03:08,239 --> 00:03:10,959
+didn't have a dorm room so I slept on
+
+71
+00:03:10,959 --> 00:03:13,000
+the floor in friends rooms I returned
+
+72
+00:03:13,000 --> 00:03:15,560
+Coke bottles for the 5-cent deposits to
+
+73
+00:03:15,560 --> 00:03:18,360
+buy food with and I would walk the seven
+
+74
+00:03:18,360 --> 00:03:20,159
+miles across town every Sunday night to
+
+75
+00:03:20,159 --> 00:03:24,040
+get one good meal a week at the Hari
+
+76
+00:03:24,040 --> 00:03:26,319
+Krishna Temple I loved it and much of
+
+77
+00:03:26,319 --> 00:03:28,239
+what I stumbled into by following my
+
+78
+00:03:28,239 --> 00:03:31,920
+curiosity and intuition turned out to be
+
+79
+00:03:31,920 --> 00:03:34,480
+Priceless later on let me give you one
+
+80
+00:03:34,480 --> 00:03:36,239
+example Reed College at that time
+
+81
+00:03:36,239 --> 00:03:38,480
+offered perhaps the best calligraphy
+
+82
+00:03:38,480 --> 00:03:41,560
+instruction in the country throughout
+
+83
+00:03:41,560 --> 00:03:44,159
+the campus every poster every label on
+
+84
+00:03:44,159 --> 00:03:46,640
+every drawer was beautifully hand
+
+85
+00:03:46,640 --> 00:03:49,599
+cigraph because I had dropped out and
+
+86
+00:03:49,599 --> 00:03:51,239
+didn't have to take the normal classes I
+
+87
+00:03:51,239 --> 00:03:53,519
+decided to take a calligraphy class to
+
+88
+00:03:53,519 --> 00:03:56,400
+learn how to do this I learned about
+
+89
+00:03:56,400 --> 00:03:57,959
+serif and Sans serif type faces about
+
+90
+00:03:57,959 --> 00:04:00,079
+varying the amount of space between
+
+91
+00:04:00,079 --> 00:04:02,159
+different letter combinations about what
+
+92
+00:04:02,159 --> 00:04:05,640
+makes great typography
+
+93
+00:04:05,640 --> 00:04:07,400
+great it was beautiful historical
+
+94
+00:04:07,400 --> 00:04:10,879
+artistically subtle in a way that
+
+95
+00:04:10,879 --> 00:04:13,560
+science can't capture and I found it
+
+96
+00:04:13,560 --> 00:04:16,280
+fascinating none of this had even a hope
+
+97
+00:04:16,280 --> 00:04:19,160
+of any practical application in my
+
+98
+00:04:19,160 --> 00:04:21,479
+life but 10 years later when we were
+
+99
+00:04:21,479 --> 00:04:24,040
+designing the first Macintosh computer
+
+100
+00:04:24,040 --> 00:04:26,479
+it all came back to me and we designed
+
+101
+00:04:26,479 --> 00:04:28,160
+it all into the Mac it was the first
+
+102
+00:04:28,160 --> 00:04:30,320
+computer with beautiful
+
+103
+00:04:30,320 --> 00:04:32,759
+typography if I had never never dropped
+
+104
+00:04:32,759 --> 00:04:34,520
+in on that single course in college the
+
+105
+00:04:34,520 --> 00:04:37,120
+Mac would have never had multiple type
+
+106
+00:04:37,120 --> 00:04:39,520
+faces or proportionately spaced fonts
+
+107
+00:04:39,520 --> 00:04:41,280
+and since Windows just copi the Mac it's
+
+108
+00:04:41,280 --> 00:04:41,540
+likely that no personal computer would
+
+109
+00:04:41,540 --> 00:04:44,920
+have
+
+110
+00:04:44,920 --> 00:04:47,980
+[Applause]
+
+111
+00:04:47,980 --> 00:04:47,980
+[Music]
+
+112
+00:04:48,639 --> 00:04:52,720
+them if I had never dropped out I would
+
+113
+00:04:52,720 --> 00:04:54,880
+have never dropped in on that
+
+114
+00:04:54,880 --> 00:04:56,720
+calligraphy class and personal computers
+
+115
+00:04:56,720 --> 00:04:59,720
+might not have the wonderful typography
+
+116
+00:04:59,720 --> 00:05:01,320
+that they do of course it was impossible
+
+117
+00:05:01,320 --> 00:05:03,880
+to connect the dots looking forward when
+
+118
+00:05:03,880 --> 00:05:07,000
+I was in college but it was very very
+
+119
+00:05:07,000 --> 00:05:09,199
+clear looking backwards 10 years later
+
+120
+00:05:09,199 --> 00:05:11,080
+again you can't connect the dots looking
+
+121
+00:05:11,080 --> 00:05:13,639
+forward you can only connect them
+
+122
+00:05:13,639 --> 00:05:15,280
+looking backwards so you have to trust
+
+123
+00:05:15,280 --> 00:05:17,320
+that the dots will somehow connect in
+
+124
+00:05:17,320 --> 00:05:20,560
+your future you have to trust in
+
+125
+00:05:20,560 --> 00:05:22,840
+something your gut Destiny Life Karma
+
+126
+00:05:22,840 --> 00:05:25,360
+whatever because believing that the dots
+
+127
+00:05:25,360 --> 00:05:27,840
+will connect down the road will give you
+
+128
+00:05:27,840 --> 00:05:29,800
+the confidence to follow your heart even
+
+129
+00:05:29,800 --> 00:05:33,639
+when it leads you off the well-worn path
+
+130
+00:05:33,639 --> 00:05:33,639
+path and that will make all the
+
+131
+00:05:37,319 --> 00:05:42,680
+difference my second story is about love
+
+132
+00:05:42,680 --> 00:05:46,080
+and
+
+133
+00:05:46,080 --> 00:05:49,160
+loss I was lucky I found what I love to
+
+134
+00:05:49,160 --> 00:05:51,639
+do early in life W and I started Apple
+
+135
+00:05:51,639 --> 00:05:53,880
+in my parents garage when I was 20 we
+
+136
+00:05:53,880 --> 00:05:55,240
+worked hard and in 10 years Apple had
+
+137
+00:05:55,240 --> 00:05:57,759
+grown from Just the Two of Us in a
+
+138
+00:05:57,759 --> 00:06:00,600
+garage into A2 billion doll company with
+
+139
+00:06:00,600 --> 00:06:03,000
+over 4,000 employees we just released
+
+140
+00:06:03,000 --> 00:06:05,000
+our finest creation the Macintosh a year
+
+141
+00:06:05,000 --> 00:06:07,720
+earlier and I just turned
+
+142
+00:06:07,720 --> 00:06:09,919
+30 and then I got
+
+143
+00:06:09,919 --> 00:06:11,160
+fired how can you get fired from a
+
+144
+00:06:11,160 --> 00:06:14,639
+company you
+
+145
+00:06:14,639 --> 00:06:16,680
+started well as Apple grew we hired
+
+146
+00:06:16,680 --> 00:06:18,639
+someone who I thought was very talented
+
+147
+00:06:18,639 --> 00:06:20,840
+to run the company with me and for the
+
+148
+00:06:20,840 --> 00:06:22,440
+first year or so things went well but
+
+149
+00:06:22,440 --> 00:06:24,440
+then our visions of the future began to
+
+150
+00:06:24,440 --> 00:06:27,160
+diverge and eventually we had a falling
+
+151
+00:06:27,160 --> 00:06:30,840
+out when we did our board of directors
+
+152
+00:06:30,840 --> 00:06:33,440
+sided with him and so at 30 I was out
+
+153
+00:06:33,440 --> 00:06:35,960
+and very publicly out what had been the
+
+154
+00:06:35,960 --> 00:06:37,080
+focus of my entire adult life was gone
+
+155
+00:06:37,080 --> 00:06:38,960
+and it was
+
+156
+00:06:38,960 --> 00:06:41,400
+devastating I really didn't know what to
+
+157
+00:06:41,400 --> 00:06:42,759
+do for a few months I felt that I had
+
+158
+00:06:42,759 --> 00:06:44,919
+let the previous generation of
+
+159
+00:06:44,919 --> 00:06:47,759
+entrepreneurs down that I had dropped
+
+160
+00:06:47,759 --> 00:06:50,599
+the Baton as it was being passed to me I
+
+161
+00:06:50,599 --> 00:06:53,000
+met with David Packard and Bob noise and
+
+162
+00:06:53,000 --> 00:06:55,720
+tried to apologize for screwing up so
+
+163
+00:06:55,720 --> 00:06:57,160
+badly I was a very public failure and I
+
+164
+00:06:57,160 --> 00:06:59,800
+even thought about running away from the
+
+165
+00:06:59,800 --> 00:07:03,560
+valley but something slowly began to
+
+166
+00:07:03,560 --> 00:07:06,039
+dawn on me I still loved what I
+
+167
+00:07:06,039 --> 00:07:09,160
+did the turn of events at Apple had not
+
+168
+00:07:09,160 --> 00:07:10,599
+changed that one bit I'd been rejected
+
+169
+00:07:10,599 --> 00:07:13,440
+but I was still in
+
+170
+00:07:13,440 --> 00:07:16,400
+love and so I decided to start
+
+171
+00:07:16,400 --> 00:07:17,879
+over I didn't see it then but it turned
+
+172
+00:07:17,879 --> 00:07:19,039
+out that getting fired from Apple was
+
+173
+00:07:19,039 --> 00:07:21,639
+the best thing that could have ever
+
+174
+00:07:21,639 --> 00:07:24,160
+happened to me the heaviness of being
+
+175
+00:07:24,160 --> 00:07:26,280
+successful was replaced by the lightness
+
+176
+00:07:26,280 --> 00:07:28,479
+of being a beginner again less sure
+
+177
+00:07:28,479 --> 00:07:29,840
+about everything it freed me to enter
+
+178
+00:07:29,840 --> 00:07:32,160
+one of the most creative periods per of
+
+179
+00:07:32,160 --> 00:07:34,440
+my life during the next 5 years I
+
+180
+00:07:34,440 --> 00:07:36,479
+started a company named next another
+
+181
+00:07:36,479 --> 00:07:37,840
+company named Pixar and fell in love
+
+182
+00:07:37,840 --> 00:07:40,400
+with an amazing woman who would become
+
+183
+00:07:40,400 --> 00:07:42,120
+my wife Pixar went on to create the
+
+184
+00:07:42,120 --> 00:07:44,639
+world's first computer animated feature
+
+185
+00:07:44,639 --> 00:07:48,360
+film Toy Story and is now the most
+
+186
+00:07:48,360 --> 00:07:51,800
+successful Animation Studio in the
+
+187
+00:07:51,800 --> 00:07:54,000
+world in a remarkable turn of events
+
+188
+00:07:54,000 --> 00:07:56,240
+Apple bought next and I returned to
+
+189
+00:07:56,240 --> 00:07:58,199
+Apple and the technology we developed it
+
+190
+00:07:58,199 --> 00:08:01,400
+next is at the heart of Apple's current
+
+191
+00:08:01,400 --> 00:08:02,520
+Renaissance and L and I have a wonderful
+
+192
+00:08:02,520 --> 00:08:05,039
+family
+
+193
+00:08:05,039 --> 00:08:06,199
+together I'm pretty sure none of this
+
+194
+00:08:06,199 --> 00:08:08,599
+would have happened if I hadn't been
+
+195
+00:08:08,599 --> 00:08:10,960
+fired from Apple it was awful tasting
+
+196
+00:08:10,960 --> 00:08:13,879
+medicine but I guess the patient needed
+
+197
+00:08:13,879 --> 00:08:15,879
+it sometime life sometimes life's going
+
+198
+00:08:15,879 --> 00:08:18,560
+to hit you in the head with a brick
+
+199
+00:08:18,560 --> 00:08:20,360
+don't lose faith I'm convinced that the
+
+200
+00:08:20,360 --> 00:08:23,080
+only thing that kept me going was that I
+
+201
+00:08:23,080 --> 00:08:25,720
+loved what I did you've got to find what
+
+202
+00:08:25,720 --> 00:08:28,280
+you love and that is as true for work as
+
+203
+00:08:28,280 --> 00:08:30,240
+it is for your lovers your work is going
+
+204
+00:08:30,240 --> 00:08:32,440
+to fill a large part of your life and
+
+205
+00:08:32,440 --> 00:08:34,719
+the only way to be truly satisfied is to
+
+206
+00:08:34,719 --> 00:08:37,279
+do what you believe is great work and
+
+207
+00:08:37,279 --> 00:08:40,240
+the only way to do great work is to love
+
+208
+00:08:40,240 --> 00:08:43,560
+what you do if you haven't found it yet
+
+209
+00:08:43,560 --> 00:08:45,519
+keep looking and don't settle as with
+
+210
+00:08:45,519 --> 00:08:47,680
+all matters of the heart you'll know
+
+211
+00:08:47,680 --> 00:08:49,560
+when you find it and like any great
+
+212
+00:08:49,560 --> 00:08:52,240
+relationship it just gets better and
+
+213
+00:08:52,240 --> 00:08:56,600
+better as the years roll on so keep
+
+214
+00:08:56,600 --> 00:08:56,600
+looking don't settle
+
+215
+00:08:57,750 --> 00:09:07,680
+[Applause]
+
+216
+00:09:07,680 --> 00:09:10,839
+my third story is about
+
+217
+00:09:10,839 --> 00:09:13,880
+death when I was 17 I read a quote that
+
+218
+00:09:13,880 --> 00:09:15,920
+went something like if you live each day
+
+219
+00:09:15,920 --> 00:09:19,000
+as if it was your last someday you'll
+
+220
+00:09:19,000 --> 00:09:19,000
+most certainly be
+
+221
+00:09:19,320 --> 00:09:25,200
+right it made an impression on me and
+
+222
+00:09:25,200 --> 00:09:26,640
+since then for the past 33 years I
+
+223
+00:09:26,640 --> 00:09:29,079
+looked in the mirror every morning and
+
+224
+00:09:29,079 --> 00:09:31,680
+asked myself if today were the last day
+
+225
+00:09:31,680 --> 00:09:34,399
+of my life what I want to do what I am
+
+226
+00:09:34,399 --> 00:09:36,320
+about to do today and whenever the
+
+227
+00:09:36,320 --> 00:09:39,000
+answer has been no for too many days in
+
+228
+00:09:39,000 --> 00:09:41,519
+a row I know I need to change
+
+229
+00:09:41,519 --> 00:09:43,720
+something remembering that I'll be dead
+
+230
+00:09:43,720 --> 00:09:45,440
+soon is the most important tool I've
+
+231
+00:09:45,440 --> 00:09:48,240
+ever encountered to help me make the big
+
+232
+00:09:48,240 --> 00:09:51,360
+choices in life because almost
+
+233
+00:09:51,360 --> 00:09:53,360
+everything all external expectations all
+
+234
+00:09:53,360 --> 00:09:56,000
+Pride all fear of embarrassment or
+
+235
+00:09:56,000 --> 00:09:58,519
+failure these things just fall away in
+
+236
+00:09:58,519 --> 00:10:00,240
+the face of death leaving only what is
+
+237
+00:10:00,240 --> 00:10:02,640
+truly important
+
+238
+00:10:02,640 --> 00:10:05,120
+remembering that you are going to die is
+
+239
+00:10:05,120 --> 00:10:07,720
+the best way I know to avoid the Trap of
+
+240
+00:10:07,720 --> 00:10:10,720
+thinking you have something to lose you
+
+241
+00:10:10,720 --> 00:10:12,360
+are already naked there is no reason not
+
+242
+00:10:12,360 --> 00:10:15,800
+to follow your
+
+243
+00:10:15,800 --> 00:10:19,079
+heart about a year ago I was diagnosed
+
+244
+00:10:19,079 --> 00:10:21,279
+with cancer I had a scan at 7:30 in the
+
+245
+00:10:21,279 --> 00:10:23,800
+morning and it clearly showed a tumor on
+
+246
+00:10:23,800 --> 00:10:27,240
+my pancreas I didn't even know what a
+
+247
+00:10:27,240 --> 00:10:29,320
+pancreas was the doctors told me this
+
+248
+00:10:29,320 --> 00:10:31,120
+was almost certainly a type of cancer
+
+249
+00:10:31,120 --> 00:10:34,200
+that is incurable and that I should
+
+250
+00:10:34,200 --> 00:10:37,279
+expect to live no longer than 3 to 6
+
+251
+00:10:37,279 --> 00:10:40,040
+months my doctor advised me to go home
+
+252
+00:10:40,040 --> 00:10:43,279
+and get my Affairs in order which is
+
+253
+00:10:43,279 --> 00:10:45,880
+doctor's code for prepare to die it
+
+254
+00:10:45,880 --> 00:10:47,680
+means to try and tell your kids
+
+255
+00:10:47,680 --> 00:10:50,200
+everything you thought you'd have the
+
+256
+00:10:50,200 --> 00:10:52,519
+next 10 years to tell them in just a few
+
+257
+00:10:52,519 --> 00:10:54,399
+months it means to make sure everything
+
+258
+00:10:54,399 --> 00:10:57,040
+is buttoned up so that it will be as
+
+259
+00:10:57,040 --> 00:11:00,760
+easy as possible for your family it
+
+260
+00:11:00,760 --> 00:11:03,839
+means to say your goodbyes
+
+261
+00:11:03,839 --> 00:11:06,120
+I live with that diagnosis all day later
+
+262
+00:11:06,120 --> 00:11:08,160
+that evening I had a biopsy where they
+
+263
+00:11:08,160 --> 00:11:09,519
+stuck an endoscope down my throat
+
+264
+00:11:09,519 --> 00:11:12,200
+through my stomach and into my
+
+265
+00:11:12,200 --> 00:11:15,079
+intestines put a needle into my pancreas
+
+266
+00:11:15,079 --> 00:11:18,160
+and got a few cells from the tumor I was
+
+267
+00:11:18,160 --> 00:11:19,839
+sedated but my wife who was there told
+
+268
+00:11:19,839 --> 00:11:22,839
+me that when they viewed the cells under
+
+269
+00:11:22,839 --> 00:11:24,519
+a microscope the doctor started crying
+
+270
+00:11:24,519 --> 00:11:26,519
+because it turned out to be a very rare
+
+271
+00:11:26,519 --> 00:11:29,720
+form of pancreatic cancer that is
+
+272
+00:11:29,720 --> 00:11:33,279
+curable with surgery I had the surgery
+
+273
+00:11:33,279 --> 00:11:33,279
+and thankfully I'm fine
+
+274
+00:11:39,160 --> 00:11:43,959
+now this was the closest I've been to
+
+275
+00:11:43,959 --> 00:11:46,399
+facing death and I hope it's the closest
+
+276
+00:11:46,399 --> 00:11:48,760
+I get for a few more decades having
+
+277
+00:11:48,760 --> 00:11:50,600
+lived through it I can now say this to
+
+278
+00:11:50,600 --> 00:11:52,279
+you with a bit more certainty than when
+
+279
+00:11:52,279 --> 00:11:54,040
+death was a useful but purely
+
+280
+00:11:54,040 --> 00:11:58,040
+intellectual
+
+281
+00:11:58,040 --> 00:11:59,839
+concept no one wants to die even people
+
+282
+00:11:59,839 --> 00:12:03,399
+who want to go to heaven don't want to
+
+283
+00:12:03,399 --> 00:12:06,279
+die to get there and yet death is the
+
+284
+00:12:06,279 --> 00:12:09,680
+destination we all share no one has ever
+
+285
+00:12:09,680 --> 00:12:12,079
+escaped it and that is as it should be
+
+286
+00:12:12,079 --> 00:12:14,920
+because death is very likely the single
+
+287
+00:12:14,920 --> 00:12:17,160
+best invention of life it's life's
+
+288
+00:12:17,160 --> 00:12:20,399
+change agent it clears out the old to
+
+289
+00:12:20,399 --> 00:12:23,800
+make way for the new right now the new
+
+290
+00:12:23,800 --> 00:12:25,959
+is you but someday not too long from now
+
+291
+00:12:25,959 --> 00:12:29,639
+you will gradually become the old and be
+
+292
+00:12:29,639 --> 00:12:30,839
+cleared away sorry to be so dramatic but
+
+293
+00:12:30,839 --> 00:12:34,399
+it's quite
+
+294
+00:12:34,399 --> 00:12:37,639
+true your time is limited so don't waste
+
+295
+00:12:37,639 --> 00:12:39,720
+it living someone else's life don't be
+
+296
+00:12:39,720 --> 00:12:42,360
+trapped by Dogma which is living with
+
+297
+00:12:42,360 --> 00:12:44,240
+the results of other people's thinking
+
+298
+00:12:44,240 --> 00:12:47,040
+don't let the noise of others opinions
+
+299
+00:12:47,040 --> 00:12:48,959
+drown out your own inner voice and most
+
+300
+00:12:48,959 --> 00:12:51,560
+important have the courage to follow
+
+301
+00:12:51,560 --> 00:12:54,079
+your heart and intuition they somehow
+
+302
+00:12:54,079 --> 00:12:59,560
+already know what you truly want to
+
+303
+00:12:59,560 --> 00:12:59,560
+become everything else is secondary
+
+304
+00:13:00,870 --> 00:13:11,519
+[Applause]
+
+305
+00:13:11,519 --> 00:13:13,560
+when I was young there was an amazing
+
+306
+00:13:13,560 --> 00:13:15,959
+publication called the whole earth
+
+307
+00:13:15,959 --> 00:13:18,720
+catalog which was one of the Bibles of
+
+308
+00:13:18,720 --> 00:13:21,000
+my generation it was created by a fellow
+
+309
+00:13:21,000 --> 00:13:23,519
+named Stuart brand not far from here in
+
+310
+00:13:23,519 --> 00:13:26,160
+Meno Park and he brought it to life with
+
+311
+00:13:26,160 --> 00:13:28,199
+his poetic touch this was in the late
+
+312
+00:13:28,199 --> 00:13:30,639
+60s before personal computers and
+
+313
+00:13:30,639 --> 00:13:32,839
+desktop publishing so it was all made
+
+314
+00:13:32,839 --> 00:13:35,160
+with typewriters scissors and Polaroid
+
+315
+00:13:35,160 --> 00:13:37,800
+cameras it was sort of like Google in
+
+316
+00:13:37,800 --> 00:13:41,399
+paperback form 35 years before Google
+
+317
+00:13:41,399 --> 00:13:43,480
+came along it was idealistic overflowing
+
+318
+00:13:43,480 --> 00:13:45,920
+with neat tools and great
+
+319
+00:13:45,920 --> 00:13:47,320
+Notions Stewart and his team put out
+
+320
+00:13:47,320 --> 00:13:49,800
+several issues of the whole earth
+
+321
+00:13:49,800 --> 00:13:52,800
+catalog and then when it had run its
+
+322
+00:13:52,800 --> 00:13:56,759
+course they put out a final issue it was
+
+323
+00:13:56,759 --> 00:13:59,399
+the mid 1970s and I was your
+
+324
+00:13:59,399 --> 00:14:01,680
+age on the back cover of their final
+
+325
+00:14:01,680 --> 00:14:04,199
+issue was a photograph of an early
+
+326
+00:14:04,199 --> 00:14:06,279
+morning Country Road the kind you might
+
+327
+00:14:06,279 --> 00:14:07,120
+find yourself hitchhiking on if you were
+
+328
+00:14:07,120 --> 00:14:10,079
+so
+
+329
+00:14:10,079 --> 00:14:13,480
+adventurous beneath it were the words
+
+330
+00:14:13,480 --> 00:14:16,759
+stay hungry stay foolish it was their
+
+331
+00:14:16,759 --> 00:14:20,199
+farewell message as they signed off stay
+
+332
+00:14:20,199 --> 00:14:21,800
+hungry stay foolish and I have always
+
+333
+00:14:21,800 --> 00:14:25,120
+wished that for
+
+334
+00:14:25,120 --> 00:14:29,399
+myself and now as you graduate to begin
+
+335
+00:14:29,399 --> 00:14:32,610
+a new I wish that for you stay hungry
+
+336
+00:14:32,610 --> 00:14:50,700
+stay foolish thank you all very
+
+337
+00:14:50,700 --> 00:14:55,639
+[Applause]
+
+338
+00:14:55,639 --> 00:14:57,839
+[Music]
+
+339
+00:14:57,839 --> 00:15:00,199
+much the preceding program is
+
+340
+00:15:00,199 --> 00:15:04,320
+copyrighted by Stanford University
+
+341
+00:15:04,320 --> 00:15:04,320
+please visit us at stanford.edu
