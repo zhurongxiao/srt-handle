@@ -1,21 +1,56 @@
-use clap::Parser;
+use clap::{Parser, Subcommand};
 use regex::Regex;
 use anyhow::{Result, Context};
 use std::fs;
 use std::path::PathBuf;
+use std::process::Command;
 
 #[derive(Parser)]
 #[command(name = "srt-handle")]
 #[command(about = "A CLI tool to process SRT subtitle files")]
+#[command(long_about = "
+SRT Handle - A comprehensive SRT subtitle processing tool
+
+COMMANDS:
+  process       Process a single SRT file with configuration rules
+  batch         Batch process SRT files in current directory with standardized naming
+
+EXAMPLES:
+  # Process single file
+  srt-handle process input.srt
+
+  # Batch process files in current directory
+  srt-handle batch
+
+  # Process with custom config and output
+  srt-handle process input.srt -c custom.txt -o output.srt
+")]
 struct Args {
-    #[arg(help = "Input SRT file path")]
-    input: PathBuf,
-    
-    #[arg(short, long, help = "Output SRT file path")]
-    output: Option<PathBuf>,
-    
-    #[arg(short, long, default_value = "config.txt", help = "Configuration file path")]
-    config: PathBuf,
+    #[command(subcommand)]
+    command: Commands,
+}
+
+#[derive(Subcommand)]
+enum Commands {
+    /// Process a single SRT file with configuration rules
+    Process {
+        #[arg(help = "Input SRT file path")]
+        input: PathBuf,
+        
+        #[arg(short, long, help = "Output SRT file path")]
+        output: Option<PathBuf>,
+        
+        #[arg(short, long, default_value = "config.txt", help = "Configuration file path")]
+        config: PathBuf,
+    },
+    /// Batch process SRT files in current directory with standardized naming
+    Batch {
+        #[arg(short, long, default_value = ".", help = "Directory to process")]
+        dir: PathBuf,
+        
+        #[arg(short, long, default_value = "config.txt", help = "Configuration file path")]
+        config: PathBuf,
+    },
 }
 
 #[derive(Debug, Clone)]
@@ -166,13 +201,110 @@ fn format_srt_output(entries: &[SrtEntry]) -> String {
         .join("\n")
 }
 
-fn main() -> Result<()> {
-    let args = Args::parse();
+fn batch_process_srt_files(dir: &PathBuf, config_path: &PathBuf) -> Result<()> {
+    println!("Scanning for SRT files in: {}", dir.display());
     
-    let config = Config::from_file(&args.config)?;
+    let entries = fs::read_dir(dir)
+        .with_context(|| format!("Failed to read directory: {}", dir.display()))?;
     
-    let content = fs::read_to_string(&args.input)
-        .with_context(|| format!("Failed to read input file: {}", args.input.display()))?;
+    let mut srt_files = Vec::new();
+    
+    for entry in entries {
+        let entry = entry?;
+        let path = entry.path();
+        
+        if path.extension().and_then(|s| s.to_str()) == Some("srt") {
+            if let Some(filename) = path.file_name().and_then(|s| s.to_str()) {
+                srt_files.push((path.clone(), filename.to_string()));
+            }
+        }
+    }
+    
+    if srt_files.is_empty() {
+        println!("No SRT files found in directory.");
+        return Ok(());
+    }
+    
+    println!("Found {} SRT files", srt_files.len());
+    
+    let mut zh_files = Vec::new();
+    let mut en_files = Vec::new();
+    let mut bil_files = Vec::new();
+    
+    for (path, filename) in &srt_files {
+        if filename.contains("[Chinese (Simplified)]") {
+            zh_files.push(path.clone());
+        } else if filename.contains("[English - English-Chinese (Simplified)]") {
+            bil_files.push(path.clone());
+        } else if filename.contains("[English - English]") {
+            en_files.push(path.clone());
+        }
+    }
+    
+    if en_files.len() > 1 {
+        println!("Warning: Found {} files with '[English - English]', only processing the first one", en_files.len());
+    }
+    
+    let mut processed_files = Vec::new();
+    
+    if let Some(zh_file) = zh_files.first() {
+        let target_path = dir.join("zh_srt.srt");
+        fs::copy(zh_file, &target_path)
+            .with_context(|| format!("Failed to copy {} to zh_srt.srt", zh_file.display()))?;
+        println!("Renamed Chinese file to: zh_srt.srt");
+        processed_files.push("zh_srt.srt");
+    }
+    
+    if let Some(en_file) = en_files.first() {
+        let target_path = dir.join("en_srt.srt");
+        fs::copy(en_file, &target_path)
+            .with_context(|| format!("Failed to copy {} to en_srt.srt", en_file.display()))?;
+        println!("Renamed English file to: en_srt.srt");
+        processed_files.push("en_srt.srt");
+    }
+    
+    if let Some(bil_file) = bil_files.first() {
+        let target_path = dir.join("bil_srt.srt");
+        fs::copy(bil_file, &target_path)
+            .with_context(|| format!("Failed to copy {} to bil_srt.srt", bil_file.display()))?;
+        println!("Renamed bilingual file to: bil_srt.srt");
+        processed_files.push("bil_srt.srt");
+    }
+    
+    if processed_files.contains(&"en_srt.srt") {
+        println!("Processing en_srt.srt for improved readability...");
+        
+        let srt_handle_path = "/home/debian/rust/srt-handle/target/release/srt-handle";
+        let en_srt_path = dir.join("en_srt.srt");
+        
+        let output = Command::new(srt_handle_path)
+            .arg("process")
+            .arg(&en_srt_path)
+            .arg("-c")
+            .arg(config_path)
+            .current_dir(dir)
+            .output()
+            .with_context(|| "Failed to execute srt-handle process command")?;
+        
+        if output.status.success() {
+            println!("Successfully processed en_srt.srt -> en_srt_ok.srt");
+        } else {
+            let stderr = String::from_utf8_lossy(&output.stderr);
+            eprintln!("Failed to process en_srt.srt: {}", stderr);
+        }
+    }
+    
+    println!("Batch processing completed.");
+    println!("Processed files: {}", processed_files.join(", "));
+    
+    Ok(())
+}
+
+fn process_single_file(input: &PathBuf, output: &Option<PathBuf>, config_path: &PathBuf) -> Result<()> {
+    let config = Config::from_file(config_path)?;
+    
+    let content = fs::read_to_string(input)
+        .with_context(|| format!("Failed to read input file: {}", input.display()))?;
     
     let mut entries = parse_srt(&content)?;
     
@@ -184,10 +316,10 @@ fn main() -> Result<()> {
     
     let output_content = format_srt_output(&entries);
     
-    let output_path = args.output.unwrap_or_else(|| {
-        let mut path = args.input.clone();
+    let output_path = output.clone().unwrap_or_else(|| {
+        let mut path = input.clone();
         if let Some(stem) = path.file_stem() {
-            let new_name = format!("{}_processed.srt", stem.to_string_lossy());
+            let new_name = format!("{}_ok.srt", stem.to_string_lossy());
             path.set_file_name(new_name);
         }
         path
@@ -197,6 +329,21 @@ fn main() -> Result<()> {
         .with_context(|| format!("Failed to write output file: {}", output_path.display()))?;
     
     println!("Processed SRT file saved to: {}", output_path.display());
+    
+    Ok(())
+}
+
+fn main() -> Result<()> {
+    let args = Args::parse();
+    
+    match args.command {
+        Commands::Process { input, output, config } => {
+            process_single_file(&input, &output, &config)?;
+        }
+        Commands::Batch { dir, config } => {
+            batch_process_srt_files(&dir, &config)?;
+        }
+    }
     
     Ok(())
 }
