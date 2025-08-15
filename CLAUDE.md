@@ -4,17 +4,19 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-`srt-handle` is a CLI tool written in Rust for processing SRT subtitle files. It applies configurable text transformations to improve subtitle readability by skipping unwanted content, combining split phrases, and moving orphaned words to the next subtitle line.
+`srt-handle` is a comprehensive CLI tool written in Rust for processing SRT subtitle files. It provides both single-file processing and batch processing capabilities with configurable text transformations to improve subtitle readability through intelligent merging, splitting, and cleanup operations.
 
 ## Development Commands
 
 ### Build and Run
 ```bash
-cargo build                           # Build the project
-cargo run -- input.srt              # Process SRT file with default config
-cargo run -- input.srt -o output.srt # Specify output file
-cargo run -- input.srt -c config.txt # Use custom config file
-cargo check                          # Quick syntax/type check
+cargo build --release                                    # Build optimized version
+cargo run -- process input.srt                         # Process single SRT file
+cargo run -- process input.srt -o output.srt           # Specify output file
+cargo run -- process input.srt -c config.txt           # Use custom config file
+cargo run -- batch                                     # Batch process current directory
+cargo run -- batch -d /path/to/directory               # Batch process specific directory
+cargo check                                            # Quick syntax/type check
 ```
 
 ### Testing
@@ -36,40 +38,85 @@ cargo doc --open     # Generate and open documentation
 
 ## Project Structure
 
-- `src/main.rs` - Main application logic with CLI parsing and SRT processing
+- `src/main.rs` - Main application logic with CLI parsing, SRT processing, and batch operations
 - `config.txt` - Configuration file defining processing rules
 - `Cargo.toml` - Project configuration with dependencies (clap, regex, anyhow)
+
+## CLI Commands
+
+### Process Command
+Process a single SRT file with configuration rules.
+```bash
+srt-handle process input.srt [OPTIONS]
+```
+
+### Batch Command  
+Batch process SRT files in a directory with standardized naming and automatic cleanup.
+```bash
+srt-handle batch [OPTIONS]
+```
+
+**Batch Processing Features:**
+- Identifies SRT files by bracket naming patterns
+- Renames files to standardized format:
+  - `[Chinese (Simplified)]` → `zh_srt.srt`
+  - `[English - English]` → `en_srt.srt` 
+  - `[English - English-Chinese (Simplified)]` → `bil_srt.srt`
+- Automatically processes English files for improved readability
+- Cleans up original files with complex bracket names
+- Preserves both original standardized and processed versions
 
 ## Architecture Overview
 
 ### Core Components
 
-1. **CLI Interface** (`Args` struct) - Uses clap for argument parsing
+1. **CLI Interface** (`Args`, `Commands` enums) - Uses clap for subcommand parsing
 2. **Configuration Parser** (`Config` struct) - Reads and parses config.txt
 3. **SRT Parser** (`parse_srt` function) - Converts SRT content to structured entries
-4. **Processing Engine** - Three main operations:
+4. **Processing Engine** - Six main operations:
    - **SKIP**: Removes subtitle entries containing specified words
    - **COMBINE**: Merges adjacent subtitles when first ends with word A and second starts with word B
-   - **END**: Moves specified trailing words from current subtitle to the beginning of next subtitle
+   - **INSERT**: Moves words from next subtitle to current when patterns match
+   - **END**: Moves specified trailing words from current subtitle to beginning of next subtitle
+   - **SPLIT**: Splits long lines (>8 words) at specified words or middle
+   - **Flexible Merging**: Intelligently merges short lines with adjacent entries
+5. **Batch Processor** (`batch_process_srt_files`) - Handles directory scanning, file renaming, and cleanup
+6. **Final Check Loop** - Continuously applies split and merge operations until stable
 
 ### Configuration Format
 
 The `config.txt` file uses this format:
 ```
-SKIP: "word1", "word2", "word3"
-COMBINE: "thank you", "entire life"
-END: "I", "my", "she", "he", "as"
+SKIP: "applause", "music", "laughter"
+COMBINE: "thank you", "entire life", "drop out"
+END: "I", "my", "she", "he", "as", "it was", "I could", "in", "in the", "on", "on the", "to", "be", "to be", "about", "what", "from", "I've", "it no","that's", "his", "and", "they", "by","I really","I was"
+INSERT: "a"
+SPLIT: "I", "my", "so"
 ```
 
 ### Processing Flow
 
+#### Single File Processing:
 1. Parse command line arguments
-2. Load configuration from file
+2. Load configuration from file  
 3. Parse input SRT file into structured entries
-4. Apply SKIP rules (filter out unwanted entries)
-5. Apply COMBINE rules (merge split phrases)
-6. Apply END rules (move orphaned words)
-7. Write processed output to file
+4. Apply initial flexible merging (≤2 words with <5 word neighbors)
+5. Apply SKIP rules (filter out unwanted entries)
+6. Apply COMBINE rules (merge split phrases)
+7. Apply INSERT rules (move words from next line to current)
+8. Apply END rules (move orphaned words)
+9. **Final Check Loop** (repeats until stable):
+   - Apply SPLIT processing (lines >8 words)
+   - Apply final check merging (lines <2 words)
+10. Write processed output to file
+
+#### Batch Processing:
+1. Scan directory for SRT files
+2. Identify files by bracket patterns in filenames
+3. Rename to standardized format (zh_srt.srt, en_srt.srt, bil_srt.srt)
+4. Process en_srt.srt using single file processing logic
+5. Clean up original files with bracket names
+6. Preserve both standardized and processed versions
 
 ### Key Functions
 
@@ -77,5 +124,16 @@ END: "I", "my", "she", "he", "as"
 - `parse_srt()` - Converts SRT text to `Vec<SrtEntry>`
 - `should_skip_entry()` - Determines if entry should be removed
 - `apply_combine_rules()` - Merges adjacent subtitle entries
+- `apply_insert_rules()` - Moves words from next subtitle to current
 - `apply_end_rules()` - Moves words between entries
+- `apply_split_processing()` - Splits long lines at specified points
+- `apply_flexible_merging()` - Merges short lines with neighbors
+- `apply_final_check_merging()` - Final cleanup of very short lines
+- `batch_process_srt_files()` - Handles batch directory processing
 - `format_srt_output()` - Converts processed entries back to SRT format
+
+### Default Configurations
+
+- **Batch config path**: `/home/debian/rust/srt-handle/config.txt`
+- **Default output naming**: `filename_ok.srt`
+- **Batch processing binary**: `/home/debian/rust/srt-handle/target/release/srt-handle`

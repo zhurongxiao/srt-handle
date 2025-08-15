@@ -48,7 +48,7 @@ enum Commands {
         #[arg(short, long, default_value = ".", help = "Directory to process")]
         dir: PathBuf,
         
-        #[arg(short, long, default_value = "config.txt", help = "Configuration file path")]
+        #[arg(short, long, default_value = "/home/debian/rust/srt-handle/config.txt", help = "Configuration file path")]
         config: PathBuf,
     },
 }
@@ -288,6 +288,16 @@ fn batch_process_srt_files(dir: &PathBuf, config_path: &PathBuf) -> Result<()> {
         
         if output.status.success() {
             println!("Successfully processed en_srt.srt -> en_srt_ok.srt");
+            
+            println!("Cleaning up original files...");
+            for (original_file, _) in &srt_files {
+                if let Err(e) = fs::remove_file(original_file) {
+                    eprintln!("Warning: Failed to delete {}: {}", original_file.display(), e);
+                } else {
+                    println!("Deleted: {}", original_file.display());
+                }
+            }
+            
         } else {
             let stderr = String::from_utf8_lossy(&output.stderr);
             eprintln!("Failed to process en_srt.srt: {}", stderr);
