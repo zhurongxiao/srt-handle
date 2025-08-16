@@ -4,6 +4,10 @@ use anyhow::{Result, Context};
 use std::fs;
 use std::path::PathBuf;
 use std::process::Command;
+use std::env;
+
+// Embed config.txt contents at compile time
+const EMBEDDED_CONFIG: &str = include_str!("../config.txt");
 
 #[derive(Parser)]
 #[command(name = "srt-handle")]
@@ -44,16 +48,16 @@ enum Commands {
         #[arg(short, long, help = "Output SRT file path")]
         output: Option<PathBuf>,
         
-        #[arg(short, long, default_value = "config.txt", help = "Configuration file path")]
-        config: PathBuf,
+        #[arg(short, long, help = "Configuration file path (uses embedded config if not specified)")]
+        config: Option<PathBuf>,
     },
     /// Batch process SRT files in current directory with standardized naming
     Batch {
         #[arg(short, long, default_value = ".", help = "Directory to process")]
         dir: PathBuf,
         
-        #[arg(short, long, default_value = "/home/debian/rust/srt-handle/config.txt", help = "Configuration file path")]
-        config: PathBuf,
+        #[arg(short, long, help = "Configuration file path (uses embedded config if not specified)")]
+        config: Option<PathBuf>,
     },
     /// Merge bilingual SRT file with same timestamps into single entries
     Merge {
@@ -77,13 +81,22 @@ struct Config {
     skip_words: Vec<String>,
     combine_phrases: Vec<(String, String)>,
     end_words: Vec<String>,
+    insert_phrases: Vec<(String, String)>,
+    split_words: Vec<String>,
 }
 
 impl Config {
     fn from_file(path: &PathBuf) -> Result<Self> {
         let content = fs::read_to_string(path)
             .with_context(|| format!("Failed to read config file: {}", path.display()))?;
-        
+        Self::from_content(&content)
+    }
+    
+    fn from_embedded() -> Result<Self> {
+        Self::from_content(EMBEDDED_CONFIG)
+    }
+    
+    fn from_content(content: &str) -> Result<Self> {
         let mut config = Config::default();
         
         for line in content.lines() {
@@ -98,6 +111,10 @@ impl Config {
                 config.combine_phrases = parse_combine_phrases(combine_content);
             } else if let Some(end_content) = line.strip_prefix("END:") {
                 config.end_words = parse_quoted_list(end_content);
+            } else if let Some(insert_content) = line.strip_prefix("INSERT:") {
+                config.insert_phrases = parse_combine_phrases(insert_content);
+            } else if let Some(split_content) = line.strip_prefix("SPLIT:") {
+                config.split_words = parse_quoted_list(split_content);
             }
         }
         
@@ -265,7 +282,7 @@ fn merge_bilingual_srt(input: &PathBuf, output: &Option<PathBuf>) -> Result<()> 
     Ok(())
 }
 
-fn batch_process_srt_files(dir: &PathBuf, config_path: &PathBuf) -> Result<()> {
+fn batch_process_srt_files(dir: &PathBuf, config_path: &Option<PathBuf>) -> Result<()> {
     println!("Scanning for SRT files in: {}", dir.display());
     
     let entries = fs::read_dir(dir)
@@ -338,16 +355,17 @@ fn batch_process_srt_files(dir: &PathBuf, config_path: &PathBuf) -> Result<()> {
     if processed_files.contains(&"en_srt.srt") {
         println!("Processing en_srt.srt for improved readability...");
         
-        let srt_handle_path = "/home/debian/rust/srt-handle/target/release/srt-handle";
         let en_srt_path = dir.join("en_srt.srt");
         
-        let output = Command::new(srt_handle_path)
-            .arg("process")
-            .arg(&en_srt_path)
-            .arg("-c")
-            .arg(config_path)
-            .current_dir(dir)
-            .output()
+        let mut cmd = Command::new(env::current_exe().unwrap_or_else(|_| PathBuf::from("srt-handle")));
+        cmd.arg("process").arg(&en_srt_path).current_dir(dir);
+        
+        // Only add config argument if one was specified
+        if let Some(config_path) = config_path {
+            cmd.arg("-c").arg(config_path);
+        }
+        
+        let output = cmd.output()
             .with_context(|| "Failed to execute srt-handle process command")?;
         
         if output.status.success() {
@@ -374,8 +392,12 @@ fn batch_process_srt_files(dir: &PathBuf, config_path: &PathBuf) -> Result<()> {
     Ok(())
 }
 
-fn process_single_file(input: &PathBuf, output: &Option<PathBuf>, config_path: &PathBuf) -> Result<()> {
-    let config = Config::from_file(config_path)?;
+fn process_single_file(input: &PathBuf, output: &Option<PathBuf>, config_path: &Option<PathBuf>) -> Result<()> {
+    let config = if let Some(path) = config_path {
+        Config::from_file(path)?
+    } else {
+        Config::from_embedded()?
+    };
     
     let content = fs::read_to_string(input)
         .with_context(|| format!("Failed to read input file: {}", input.display()))?;

@@ -41,7 +41,7 @@ cargo doc --open     # Generate and open documentation
 ## Project Structure
 
 - `src/main.rs` - Main application logic with CLI parsing, SRT processing, and batch operations
-- `config.txt` - Configuration file defining processing rules
+- `config.txt` - Configuration file (embedded at compile time)
 - `Cargo.toml` - Project configuration with dependencies (clap, regex, anyhow)
 
 ## CLI Commands
@@ -148,8 +148,49 @@ SPLIT: "I", "my", "so"
 - `merge_bilingual_srt()` - Merges bilingual SRT files with same timestamps
 - `format_srt_output()` - Converts processed entries back to SRT format
 
+## Configuration Management
+
+The application uses embedded configuration for maximum portability and simplicity.
+
+### Embedded Configuration
+
+- **config.txt** is embedded into the binary at compile time using `include_str!`
+- **No external files needed** - the binary is completely self-contained
+- **Works from any directory** without requiring config file setup
+
+### Configuration Behavior
+
+- **Default**: Uses embedded config.txt content
+- **Override**: Use `-c /path/to/custom.txt` to specify external config file
+- **Embedded config includes**: All processing rules (SKIP, COMBINE, END, INSERT, SPLIT)
+
+### Machine Portability
+
+Deploying to a new machine is extremely simple:
+
+1. **Copy just the binary** to the target machine
+2. **Run from anywhere**: `srt-handle process file.srt`
+
+That's it! No configuration files, environment variables, or setup required.
+
+### Custom Configuration
+
+If you need different processing rules:
+
+```bash
+# Use custom config file
+srt-handle process input.srt -c /path/to/custom-config.txt
+
+# Custom config file format (same as embedded)
+SKIP: "applause", "music", "laughter"
+COMBINE: "thank you", "entire life"
+END: "I", "my", "she", "he"
+INSERT: "very much"
+SPLIT: "I", "my", "so"
+```
+
 ### Default Configurations
 
-- **Batch config path**: `/home/debian/rust/srt-handle/config.txt`
+- **Default behavior**: Uses embedded config.txt content
 - **Default output naming**: `filename_ok.srt`
-- **Batch processing binary**: `/home/debian/rust/srt-handle/target/release/srt-handle`
+- **Self-contained**: No external dependencies
