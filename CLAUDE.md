@@ -16,6 +16,8 @@ cargo run -- process input.srt -o output.srt           # Specify output file
 cargo run -- process input.srt -c config.txt           # Use custom config file
 cargo run -- batch                                     # Batch process current directory
 cargo run -- batch -d /path/to/directory               # Batch process specific directory
+cargo run -- merge bilingual.srt                      # Merge bilingual SRT file
+cargo run -- merge bilingual.srt -o merged.srt        # Merge with custom output
 cargo check                                            # Quick syntax/type check
 ```
 
@@ -56,6 +58,12 @@ Batch process SRT files in a directory with standardized naming and automatic cl
 srt-handle batch [OPTIONS]
 ```
 
+### Merge Command
+Merge bilingual SRT file with same timestamps into single entries (English + Chinese).
+```bash
+srt-handle merge bilingual.srt [OPTIONS]
+```
+
 **Batch Processing Features:**
 - Identifies SRT files by bracket naming patterns
 - Renames files to standardized format:
@@ -65,6 +73,13 @@ srt-handle batch [OPTIONS]
 - Automatically processes English files for improved readability
 - Cleans up original files with complex bracket names
 - Preserves both original standardized and processed versions
+
+**Merge Processing Features:**
+- Identifies consecutive SRT entries with identical timestamps
+- Merges pairs into single entries with English + Chinese text
+- First line becomes English subtitle, second line becomes Chinese subtitle
+- Maintains original timing and indexing
+- Reduces total entry count while preserving all content
 
 ## Architecture Overview
 
@@ -130,6 +145,7 @@ SPLIT: "I", "my", "so"
 - `apply_flexible_merging()` - Merges short lines with neighbors
 - `apply_final_check_merging()` - Final cleanup of very short lines
 - `batch_process_srt_files()` - Handles batch directory processing
+- `merge_bilingual_srt()` - Merges bilingual SRT files with same timestamps
 - `format_srt_output()` - Converts processed entries back to SRT format
 
 ### Default Configurations

@@ -14,6 +14,7 @@ SRT Handle - A comprehensive SRT subtitle processing tool
 COMMANDS:
   process       Process a single SRT file with configuration rules
   batch         Batch process SRT files in current directory with standardized naming
+  merge         Merge bilingual SRT file with same timestamps into single entries
 
 EXAMPLES:
   # Process single file
@@ -21,6 +22,9 @@ EXAMPLES:
 
   # Batch process files in current directory
   srt-handle batch
+
+  # Merge bilingual SRT file
+  srt-handle merge bilingual.srt
 
   # Process with custom config and output
   srt-handle process input.srt -c custom.txt -o output.srt
@@ -50,6 +54,14 @@ enum Commands {
         
         #[arg(short, long, default_value = "/home/debian/rust/srt-handle/config.txt", help = "Configuration file path")]
         config: PathBuf,
+    },
+    /// Merge bilingual SRT file with same timestamps into single entries
+    Merge {
+        #[arg(help = "Input bilingual SRT file path")]
+        input: PathBuf,
+        
+        #[arg(short, long, help = "Output merged SRT file path")]
+        output: Option<PathBuf>,
     },
 }
 
@@ -199,6 +211,58 @@ fn format_srt_output(entries: &[SrtEntry]) -> String {
         })
         .collect::<Vec<_>>()
         .join("\n")
+}
+
+fn merge_bilingual_srt(input: &PathBuf, output: &Option<PathBuf>) -> Result<()> {
+    println!("Merging bilingual SRT file: {}", input.display());
+    
+    let content = fs::read_to_string(input)
+        .with_context(|| format!("Failed to read input file: {}", input.display()))?;
+    
+    let entries = parse_srt(&content)?;
+    
+    let mut merged_entries = Vec::new();
+    let mut i = 0;
+    
+    while i < entries.len() {
+        if i + 1 < entries.len() && entries[i].timestamp == entries[i + 1].timestamp {
+            // Found a pair with same timestamp - merge them
+            let english_text = &entries[i].text;
+            let chinese_text = &entries[i + 1].text;
+            
+            let merged_entry = SrtEntry {
+                index: entries[i].index,
+                timestamp: entries[i].timestamp.clone(),
+                text: format!("{}\n{}", english_text, chinese_text),
+            };
+            
+            merged_entries.push(merged_entry);
+            i += 2; // Skip both entries
+        } else {
+            // Single entry, keep as is
+            merged_entries.push(entries[i].clone());
+            i += 1;
+        }
+    }
+    
+    let output_content = format_srt_output(&merged_entries);
+    
+    let output_path = output.clone().unwrap_or_else(|| {
+        let mut path = input.clone();
+        if let Some(stem) = path.file_stem() {
+            let new_name = format!("{}_merged.srt", stem.to_string_lossy());
+            path.set_file_name(new_name);
+        }
+        path
+    });
+    
+    fs::write(&output_path, output_content)
+        .with_context(|| format!("Failed to write output file: {}", output_path.display()))?;
+    
+    println!("Merged bilingual SRT saved to: {}", output_path.display());
+    println!("Merged {} subtitle pairs into {} entries", entries.len() / 2, merged_entries.len());
+    
+    Ok(())
 }
 
 fn batch_process_srt_files(dir: &PathBuf, config_path: &PathBuf) -> Result<()> {
@@ -352,6 +416,9 @@ fn main() -> Result<()> {
         }
         Commands::Batch { dir, config } => {
             batch_process_srt_files(&dir, &config)?;
+        }
+        Commands::Merge { input, output } => {
+            merge_bilingual_srt(&input, &output)?;
         }
     }
     
